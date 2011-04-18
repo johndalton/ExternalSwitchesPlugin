@@ -42,6 +42,7 @@ public class SamplePlugin extends JavaPlugin {
         pm.registerEvent(Event.Type.PLAYER_MOVE, playerListener, Priority.Normal, this);
         pm.registerEvent(Event.Type.BLOCK_PHYSICS, blockListener, Priority.Normal, this);
         pm.registerEvent(Event.Type.BLOCK_CANBUILD, blockListener, Priority.Normal, this);
+        pm.registerEvent(Event.Type.REDSTONE_CHANGE, blockListener, Priority.Normal, this);
 
         // Register our commands
         getCommand("pos").setExecutor(new SamplePosCommand(this));

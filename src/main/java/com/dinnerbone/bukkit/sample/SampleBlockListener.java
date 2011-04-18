@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
 import org.bukkit.event.block.BlockPhysicsEvent;
+import org.bukkit.event.block.BlockRedstoneEvent;
 
 /**
  * Sample block listener
@@ -28,6 +29,19 @@ public class SampleBlockListener extends BlockListener {
             if (above.getType() == Material.IRON_BLOCK) {
                 event.setCancelled(true);
             }
+        }
+    }
+
+    @Override
+    public void onBlockRedstoneChange(BlockRedstoneEvent event) {
+       	Block b = event.getBlock();
+        Material mat = b.getType();
+
+        if (mat.equals(Material.LEVER)) {
+            System.out.println( "Lever at chunk " + b.getChunk() + " (" +b.getX()+","+b.getY()+","+b.getZ()+") is switched "
+            					+ (b.isBlockPowered() ? "on" : "off"));
+            System.out.println( "b is " + b + " and mat is " + mat );
+
         }
     }
 
