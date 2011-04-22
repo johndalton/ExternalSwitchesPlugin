@@ -1,5 +1,5 @@
 
-package com.dinnerbone.bukkit.sample;
+package info.johndalton.bukkit.externalswitches;
 
 import java.util.HashMap;
 import org.bukkit.entity.Player;
@@ -10,13 +10,13 @@ import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.plugin.PluginManager;
 
 /**
- * Sample plugin for Bukkit
+ * ExternalSwitches plugin for Bukkit
  *
- * @author Dinnerbone
+ * @author John Dalton
  */
-public class SamplePlugin extends JavaPlugin {
-    private final SamplePlayerListener playerListener = new SamplePlayerListener(this);
-    private final SampleBlockListener blockListener = new SampleBlockListener(this);
+public class ExternalSwitchesPlugin extends JavaPlugin {
+    private final ExternalSwitchesPlayerListener playerListener = new ExternalSwitchesPlayerListener(this);
+    private final ExternalSwitchesBlockListener blockListener = new ExternalSwitchesBlockListener(this);
     private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();
 
     // NOTE: There should be no need to define a constructor any more for more info on moving from

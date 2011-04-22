@@ -1,5 +1,5 @@
 
-package com.dinnerbone.bukkit.sample;
+package info.johndalton.bukkit.externalswitches;
 
 import org.bukkit.entity.Player;
 import org.bukkit.command.Command;
@@ -11,9 +11,9 @@ import org.bukkit.command.CommandSender;
  * @author SpaceManiac
  */
 public class SampleDebugCommand implements CommandExecutor {
-    private final SamplePlugin plugin;
+    private final ExternalSwitchesPlugin plugin;
 
-    public SampleDebugCommand(SamplePlugin plugin) {
+    public SampleDebugCommand(ExternalSwitchesPlugin plugin) {
         this.plugin = plugin;
     }
 

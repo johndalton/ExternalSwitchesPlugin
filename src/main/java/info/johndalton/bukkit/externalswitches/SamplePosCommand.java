@@ -1,5 +1,5 @@
 
-package com.dinnerbone.bukkit.sample;
+package info.johndalton.bukkit.externalswitches;
 
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -12,9 +12,9 @@ import org.bukkit.command.CommandSender;
  * @author SpaceManiac
  */
 public class SamplePosCommand implements CommandExecutor {
-    private final SamplePlugin plugin;
+    private final ExternalSwitchesPlugin plugin;
 
-    public SamplePosCommand(SamplePlugin plugin) {
+    public SamplePosCommand(ExternalSwitchesPlugin plugin) {
         this.plugin = plugin;
     }
 

@@ -1,22 +1,23 @@
 
-package com.dinnerbone.bukkit.sample;
+package info.johndalton.bukkit.externalswitches;
 
 import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.Material;
+import org.bukkit.material.Lever;
 import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
 import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.block.BlockRedstoneEvent;
 
 /**
- * Sample block listener
- * @author Dinnerbone
+ * ExternalSwitches block listener
+ * @author John Dalton
  */
-public class SampleBlockListener extends BlockListener {
-    private final SamplePlugin plugin;
+public class ExternalSwitchesBlockListener extends BlockListener {
+    private final ExternalSwitchesPlugin plugin;
 
-    public SampleBlockListener(final SamplePlugin plugin) {
+    public ExternalSwitchesBlockListener(final ExternalSwitchesPlugin plugin) {
         this.plugin = plugin;
     }
 
@@ -38,10 +39,9 @@ public class SampleBlockListener extends BlockListener {
         Material mat = b.getType();
 
         if (mat.equals(Material.LEVER)) {
-            System.out.println( "Lever at chunk " + b.getChunk() + " (" +b.getX()+","+b.getY()+","+b.getZ()+") is switched "
-            					+ (b.isBlockPowered() ? "on" : "off"));
-            System.out.println( "b is " + b + " and mat is " + mat );
-
+	    Lever l = new Lever(mat);
+            System.out.println( "Lever at (" + b.getX() + "," + b.getY() + "," + b.getZ() + ") switched "
+	    			+ (event.getOldCurrent() < event.getNewCurrent() ? "on" : "off") );
         }
     }
 

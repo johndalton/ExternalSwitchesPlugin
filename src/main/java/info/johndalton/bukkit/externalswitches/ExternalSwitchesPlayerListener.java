@@ -1,5 +1,5 @@
 
-package com.dinnerbone.bukkit.sample;
+package info.johndalton.bukkit.externalswitches;
 
 import org.bukkit.Location;
 import org.bukkit.event.player.PlayerEvent;
@@ -10,10 +10,10 @@ import org.bukkit.event.player.PlayerMoveEvent;
  * Handle events for all Player related events
  * @author Dinnerbone
  */
-public class SamplePlayerListener extends PlayerListener {
-    private final SamplePlugin plugin;
+public class ExternalSwitchesPlayerListener extends PlayerListener {
+    private final ExternalSwitchesPlugin plugin;
 
-    public SamplePlayerListener(SamplePlugin instance) {
+    public ExternalSwitchesPlayerListener(ExternalSwitchesPlugin instance) {
         plugin = instance;
     }
 
