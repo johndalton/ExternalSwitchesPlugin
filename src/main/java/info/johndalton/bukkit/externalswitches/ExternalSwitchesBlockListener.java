@@ -22,18 +22,6 @@ public class ExternalSwitchesBlockListener extends BlockListener {
     }
 
     @Override
-    public void onBlockPhysics(BlockPhysicsEvent event) {
-        Block block = event.getBlock();
-
-        if ((block.getType() == Material.SAND) || (block.getType() == Material.GRAVEL)) {
-            Block above = block.getFace(BlockFace.UP);
-            if (above.getType() == Material.IRON_BLOCK) {
-                event.setCancelled(true);
-            }
-        }
-    }
-
-    @Override
     public void onBlockRedstoneChange(BlockRedstoneEvent event) {
        	Block b = event.getBlock();
         Material mat = b.getType();
@@ -45,12 +33,4 @@ public class ExternalSwitchesBlockListener extends BlockListener {
         }
     }
 
-    @Override
-    public void onBlockCanBuild(BlockCanBuildEvent event) {
-        Material mat = event.getMaterial();
-
-        if (mat.equals(Material.CACTUS)) {
-            event.setBuildable(true);
-        }
-    }
 }
