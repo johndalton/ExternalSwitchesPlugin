@@ -34,9 +34,7 @@ public class ExternalSwitchesPlugin extends JavaPlugin {
 
         // Register our events
         PluginManager pm = getServer().getPluginManager();
-        pm.registerEvent(Event.Type.BLOCK_PHYSICS, blockListener, Priority.Normal, this);
-        pm.registerEvent(Event.Type.BLOCK_CANBUILD, blockListener, Priority.Normal, this);
-        pm.registerEvent(Event.Type.REDSTONE_CHANGE, blockListener, Priority.Normal, this);
+        pm.registerEvent(Event.Type.REDSTONE_CHANGE, blockListener, Priority.Monitor, this);
 
         // Register our commands
         getCommand("switchtoggle").setExecutor(new ExternalSwitchesToggleCommand(this));

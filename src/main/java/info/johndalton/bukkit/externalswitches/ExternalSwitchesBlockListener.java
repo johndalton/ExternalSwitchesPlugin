@@ -2,12 +2,8 @@
 package info.johndalton.bukkit.externalswitches;
 
 import org.bukkit.block.Block;
-import org.bukkit.block.BlockFace;
 import org.bukkit.Material;
-import org.bukkit.material.Lever;
-import org.bukkit.event.block.BlockCanBuildEvent;
 import org.bukkit.event.block.BlockListener;
-import org.bukkit.event.block.BlockPhysicsEvent;
 import org.bukkit.event.block.BlockRedstoneEvent;
 
 /**
@@ -24,10 +20,9 @@ public class ExternalSwitchesBlockListener extends BlockListener {
     @Override
     public void onBlockRedstoneChange(BlockRedstoneEvent event) {
        	Block b = event.getBlock();
-        Material mat = b.getType();
-
-        if (mat.equals(Material.LEVER)) {
-	    Lever l = new Lever(mat);
+	Material mat = b.getType();
+ 
+	if (mat.equals(Material.LEVER)) {
             System.out.println( "Lever at (" + b.getX() + "," + b.getY() + "," + b.getZ() + ") switched "
 	    			+ (event.getOldCurrent() < event.getNewCurrent() ? "on" : "off") );
         }
